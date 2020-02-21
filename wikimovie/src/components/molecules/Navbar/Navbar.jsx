@@ -13,7 +13,7 @@ const Navbar = (props) => (
         </span>
         <form className="form-inline">
             <Input 
-                style='form-control mr-sm-2'
+                style={`form-control mr-sm-2`}
                 name="search" 
                 type="search"
                 // value={this.state.contact.phone}
@@ -21,7 +21,7 @@ const Navbar = (props) => (
                 // handleChange={this.handleInput}
                 />
             <Button 
-                style='btn btn-outline-success my-2 my-sm-0 search-button'
+                style={`btn btn-outline-success my-2 my-sm-0 search-button`}
                 type='submit'>Buscar</Button>
             <Image style={`moviedb-logo`}/>
         </form>
