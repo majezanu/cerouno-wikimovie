@@ -3,6 +3,9 @@ Encuentra tu próxima película con esta aplicación.
 Incluye resumen, calificación, actores y todo lo que necesita saber sobre la película.
 Esta aplicación ayudará a los usuarios a encontrar su próxima película para ver mostrando datos útiles.
 
+## Estilos
+La interfaz del usuario está siendo estilizada con ayuda del framework de CSS Bootsapp: (https://create-react-app.dev/docs/adding-bootstrap/)
+
 ## Tecnical Information
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
