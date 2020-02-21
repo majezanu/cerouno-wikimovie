@@ -1,3 +1,10 @@
+## WikiMovie
+Encuentra tu próxima película con esta aplicación. 
+Incluye resumen, calificación, actores y todo lo que necesita saber sobre la película.
+Esta aplicación ayudará a los usuarios a encontrar su próxima película para ver mostrando datos útiles.
+
+## Tecnical Information
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
