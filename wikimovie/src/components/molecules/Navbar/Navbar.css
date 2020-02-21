@@ -1,0 +1,12 @@
+.moviedb-logo {
+    display: block;
+    will-change: height, width;
+    outline: none;
+    border: 0;
+    width: 81px;
+    height: 72px;
+}
+
+.search-button {
+    margin: 8px 8px 8px 8px;
+}
