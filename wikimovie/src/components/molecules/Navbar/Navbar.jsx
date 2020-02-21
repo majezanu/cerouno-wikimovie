@@ -5,7 +5,7 @@ import './Navbar.css';
 import Input from '../../atoms/Input/Input';
 import Button from '../../atoms/Button/Button';
 const Navbar = (props) => (
-    <nav className="navbar navbar-light bg-light justify-content-between">
+    <nav className="navbar navbar-expand-lg fixed-top bg-light justify-content-between">
         <span className="navbar-brand">
             <h1>
                 <Icon icon='video' /> MovieWiki
