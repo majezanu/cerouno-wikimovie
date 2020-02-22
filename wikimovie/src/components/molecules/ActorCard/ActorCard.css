@@ -1,0 +1,8 @@
+.actor-card-detail {
+    margin: 8px 8px 8px 8px;
+  }
+  
+  .actor-img-detail {
+    max-height: 200px;
+    object-fit: cover;
+  }

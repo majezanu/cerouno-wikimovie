@@ -9,6 +9,7 @@ import RatingMeter from '../../atoms/RatingMeter/RatingMeter';
 import Footer from '../../atoms/Footer/Footer';
 import Icon from '../../atoms/Icon/Icon';
 import MovieUtils from '../../../utils/MovieUtils';
+import MovieCredits from '../MovieCredits/MovieCredits';
 const MovieDetail = (props) => {
     const openHomePage = (e) => {
         e.preventDefault();
@@ -48,7 +49,7 @@ const MovieDetail = (props) => {
                         <Image
                             style={`image-cover-detail container-fluid`}
                             image={MovieRepository.serveBackdropImage(movie.backdrop_path)}/>
-                        <div id="carouselExampleControls" className="carousel slide imagebox-desc-detail" data-ride="carousel">
+                        <div id="carouselExampleControls" className="carousel slide imagebox-desc-detail" data-ride="carousel" data-pause="true">
                             <div className="carousel-inner">
                                 <div className="carousel-item active">
                                     <div className="container">
@@ -91,7 +92,7 @@ const MovieDetail = (props) => {
                                     </div>
                                 </div>
                                 <div className="carousel-item">
-                                    <h1>Actores</h1>
+                                    <MovieCredits cast={credits.cast}></MovieCredits>
                                 </div>
                             </div>
                             <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
