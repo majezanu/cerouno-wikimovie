@@ -18,14 +18,21 @@ const MovieDetail = (props) => {
     const [movie, setMovie] = useState(null);
     const [credits, setCredits] = useState({});
     const fetchMovie = () => {
-        MovieRepository.getMovieById(setDataResponse, loading, params.id);        
+        MovieRepository.getMovieById(setDataResponse, loading, params.id);
+        MovieRepository.getCredits(setCreditsResponse, loading, params.id);        
     }
 
     const setDataResponse = (response) =>{
         setMovie(response);
     }
+    const setCreditsResponse = (response) => {
+        setCredits(response);
+    }
     const loading = () => {
         console.log('Loading finish');
+    }
+    const getByJob = (job) =>{
+        return credits.crew.filter(member => member.job === job);
     }
 
     useEffect(() => fetchMovie(), []);
@@ -66,10 +73,16 @@ const MovieDetail = (props) => {
                                                                 movie.genres.map((genre) => {
                                                                     return <label key={genre.id}>{genre.name}&nbsp;&nbsp;&nbsp;</label>})
                                                             }
+                                                            <h5>Directores</h5>
+                                                            {
+                                                                credits.crew && credits.crew.length > 0 && 
+                                                                getByJob('Director').map((director) => {
+                                                                    return <label key={director.id}>{director.name}&nbsp;&nbsp;&nbsp;</label>})
+                                                            }
                                                         </div>
                                                         <div className="col">
-                                                        <h5>IMDB Rating</h5>
-                                                        <RatingMeter value={movie.vote_average * 10}></RatingMeter>
+                                                            <h5>IMDB Rating</h5>
+                                                            <RatingMeter value={movie.vote_average * 10}></RatingMeter>
                                                         </div>
                                                     </div>
                                                 </div>                                        
