@@ -7,7 +7,7 @@ const Button = (props) => (
             props.style ? 
             props.style : 
             'btn btn-outline-primary'} 
-            onClick={props.onClick}
+            onClick={props.action}
             type={props.type}>
     <Icon icon={props.icon}></Icon>
     {props.children}    

@@ -6,6 +6,12 @@ Esta aplicación ayudará a los usuarios a encontrar su próxima película para 
 ## Estilos
 La interfaz del usuario está siendo estilizada con ayuda del framework de CSS Bootsapp: (https://create-react-app.dev/docs/adding-bootstrap/)
 
+## Website
+Si quieres visitar la página, puedes dirigirte a: (https://hardcore-galileo-d98e8c.netlify.com)
+
+## Información
+La información mostrada en esta aplicación web es servida por Movie Data Base: (https://developers.themoviedb.org/)
+
 ## Tecnical Information
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
