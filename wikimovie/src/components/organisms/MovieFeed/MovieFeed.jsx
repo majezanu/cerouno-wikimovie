@@ -19,7 +19,12 @@ const MovieFeed = (props) => (
         </div>
         <div className="row load-more-button">
             <div className="col">
-                <Button style={`btn btn-outline-success my-2 my-sm-0 load-more-button`} action={props.loadMoreAction}>VER MÁS</Button>
+                {
+                    props.movies.length > 0 && <Button 
+                        style={`btn btn-outline-success my-2 my-sm-0 load-more-button`} 
+                        action={props.loadMoreAction}>VER MÁS</Button>
+                }
+                
             </div>
         </div>
     </div>
