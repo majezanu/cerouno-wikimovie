@@ -1,0 +1,4 @@
+.credits-container{
+    overflow: auto;
+    max-height: 400px;
+}
