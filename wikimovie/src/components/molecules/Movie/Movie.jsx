@@ -16,13 +16,21 @@ const Movie = (props) => {
         return props.type === 'detail'
     }
 
+    
+
     return (
-        <React.Fragment>
+        <React.Fragment >
             {
-                isCard() && <MovieCard movie={props.movie ? props.movie : movie}></MovieCard>
+                isCard() && 
+                    <MovieCard 
+                        openDetailAction={e => props.openDetailAction(e, props.movie.id)} 
+                        movie={props.movie ? props.movie : movie}></MovieCard>
             }
             {
-                isCover() && <MovieCover movie={props.movie ? props.movie : movie}></MovieCover>
+                isCover() && 
+                    <MovieCover 
+                        openDetailAction={e => props.openDetailAction(e, props.movie.id)} 
+                        movie={props.movie ? props.movie : movie}></MovieCover>
             }
             {
                 isDetail() && <MovieDetail id={movie.id}></MovieDetail>

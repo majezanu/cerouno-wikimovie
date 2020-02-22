@@ -17,6 +17,20 @@ class MovieRepository {
             .catch(error => console.log(error))
             .finally(() => loadingCallback());
     }
+    static getMovieById(responseCallback, loadingCallback, id) {
+        fetch(`${API_URL}movie/${id}?api_key=${API_KEY}&language=es-MX`)
+            .then(response => response.json())
+            .then(response => responseCallback(response))
+            .catch(error => console.log(error))
+            .finally(() => loadingCallback());
+    }
+    static getCredits(responseCallback, loadingCallback, id) {
+        fetch(`${API_URL}movie/${id}/credits?api_key=${API_KEY}&language=es-MX`)
+            .then(response => response.json())
+            .then(response => responseCallback(response))
+            .catch(error => console.log(error))
+            .finally(() => loadingCallback());
+    }
     static serveBackdropImage(url) {
         return `${IMAGE_BASE_URL}w1280${url}`
     }

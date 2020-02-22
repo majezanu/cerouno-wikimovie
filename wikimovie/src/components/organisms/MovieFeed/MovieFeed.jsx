@@ -12,7 +12,7 @@ const MovieFeed = (props) => (
         {
                 props.movies.length > 0 ? 
                 props.movies.map((movie) => {
-                    return <Movie movie={movie} type='card' key={movie.id}></Movie>})
+                    return <Movie movie={movie} type='card' key={movie.id} openDetailAction={props.openDetailAction}></Movie>})
                 :
                 <h1>No hay resultados</h1>
             }
