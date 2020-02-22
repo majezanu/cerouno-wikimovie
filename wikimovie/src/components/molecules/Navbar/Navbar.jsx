@@ -18,21 +18,34 @@ const Navbar = (props) => {
                 <Icon icon='video' /> MovieWiki
             </h1>
         </span>
-        <form className="form-inline">
-            <Input 
-                style={`form-control mr-sm-2`}
-                name="search" 
-                type="search"
-                value={searchTerm}
-                placeholder="Buscar..."
-                handleChange={handleInputChange}
-                />
-            <Button 
-                style={`btn btn-outline-success my-2 my-sm-0 search-button`}
-                type='submit'
-                action={e => props.searchAction(e, searchTerm)}>Buscar</Button>
-            <Image style={`moviedb-logo`}/>
-        </form>
+        
+            <form className="form-inline">
+                {
+                props.searchAction ?
+                <React.Fragment>
+                    <Input 
+                        style={`form-control mr-sm-2`}
+                        name="search" 
+                        type="search"
+                        value={searchTerm}
+                        placeholder="Buscar..."
+                        handleChange={handleInputChange}
+                        />
+                    <Button 
+                        style={`btn btn-outline-success my-2 my-sm-0 search-button`}
+                        type='submit'
+                        action={e => props.searchAction(e, searchTerm)}>Buscar</Button>
+                    <Image style={`moviedb-logo`}/>
+                </React.Fragment>
+                :
+                <Button 
+                        style={`btn btn-outline-success my-2 my-sm-0 search-button`}
+                        type='submit'
+                        action={e => props.openPageAction(e)}>Home</Button>
+                }
+            </form>
+
+        
     </nav>
     );
 };

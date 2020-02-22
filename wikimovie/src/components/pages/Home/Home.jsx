@@ -3,7 +3,7 @@ import Movie from '../../molecules/Movie/Movie'
 import MovieRepository from '../../../data/MovieRepository'
 import MovieFeed from '../../organisms/MovieFeed/MovieFeed';
 import Navbar from '../../molecules/Navbar/Navbar';
-const Home = () => {
+const Home = (props) => {
     const [movies, setMovies] = useState([]);
     const [page, setPage] = useState(1);
     const [totalResults, setTotalResults] = useState(0);
@@ -40,19 +40,31 @@ const Home = () => {
         setMovies([]);
         setPage(1);
     }
+    const openDetailPage = (e, id) => {
+        e.preventDefault();
+        openPage(`/movie/${id}`);
+    }
+
+    const openPage = (pageToOpen) => {
+        props.history.push(pageToOpen);
+    }
     
     
     return (
         <div className="container-fluid">
-            <Navbar searchAction={search}></Navbar>
+            <Navbar searchAction={search} ></Navbar>
             <div className="row">
                 <div className="col">
-                    <Movie type='cover' movie={movies.length > 0 ? movies[0] : null}></Movie>
+                    <Movie 
+                        type='cover' 
+                        openDetailAction={openDetailPage} 
+                        movie={movies.length > 0 ? movies[0] : null}></Movie>
                 </div>
             </div>
             <div className="row">
                 <div className="col">
                     <MovieFeed 
+                        openDetailAction={openDetailPage}
                         total={totalResults}
                         movies={movies} 
                         title={searchTerm ? `Resultados para ${searchTerm}` : 'Popular'}
