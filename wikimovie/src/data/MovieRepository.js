@@ -4,7 +4,14 @@ const IMAGE_BASE_URL ='http://image.tmdb.org/t/p/';
 
 class MovieRepository {
     static getPopularMovies(responseCallback, loadingCallback, page) {
-        fetch(`${API_URL}movie/popular?api_key=${API_KEY}&language=es-MX&page=1`)
+        fetch(`${API_URL}movie/popular?api_key=${API_KEY}&language=es-MX&page=${page}`)
+            .then(response => response.json())
+            .then(response => responseCallback(response))
+            .catch(error => console.log(error))
+            .finally(() => loadingCallback());
+    }
+    static searchMovies(responseCallback, loadingCallback, searchTerm, page) {
+        fetch(`${API_URL}search/movie?api_key=${API_KEY}&language=es-MX&page=${page}&query=${searchTerm}`)
             .then(response => response.json())
             .then(response => responseCallback(response))
             .catch(error => console.log(error))
